@@ -1,0 +1,31 @@
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px 0px #7fff00;
+  }
+  to {
+    box-shadow: 0 0 20px 5px #7fff00;
+  }
+}
+
+/* Apply glow effect on hover */
+.glow-on-hover:hover {
+  animation: glow 1.5s infinite alternate;
+}
+
+.cool-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.cool-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgb(239 68 68 /1);
+  transition: width 0.5s;
+}
+
+.cool-link:hover::after {
+  width: 40%;
+}
