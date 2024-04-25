@@ -43,6 +43,7 @@ import food_29 from './food_29.png'
 import food_30 from './food_30.png'
 import food_31 from './food_31.png'
 import food_32 from './food_32.png'
+import header_food from './top-view-baked.jpg'
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -85,6 +86,10 @@ export const assets = {
 export interface Menu {
   menu_name: string
   menu_image: string
+  category: string
+  name: string
+  time: string
+  serving: string
 }
 
 export interface Food {
@@ -100,36 +105,70 @@ export const menu_list: Menu[] = [
   {
     menu_name: 'Salad',
     menu_image: menu_1,
+    category: 'Salad',
+    name: 'Healthy Salad',
+    time: '10 mins',
+    serving: '1 portion',
   },
   {
     menu_name: 'Rolls',
     menu_image: menu_2,
+    category: 'Appetizer',
+    name: 'Chicken Rolls',
+    time: '20 mins',
+    serving: '2 portions',
   },
   {
     menu_name: 'Deserts',
     menu_image: menu_3,
+    category: 'Dessert',
+    name: 'Chocolate Cake',
+    time: '45 mins',
+    serving: '8 portions',
   },
   {
     menu_name: 'Sandwich',
     menu_image: menu_4,
+    category: 'Sandwich',
+    name: 'Veggie Delight',
+    time: '15 mins',
+    serving: '1 portion',
   },
   {
     menu_name: 'Cake',
     menu_image: menu_5,
+    category: 'Dessert',
+    name: 'Red Velvet Cake',
+    time: '60 mins',
+    serving: '10 portions',
   },
   {
     menu_name: 'Pure Veg',
     menu_image: menu_6,
+    category: 'Main Course',
+    name: 'Vegetarian Thali',
+    time: '30 mins',
+    serving: '1 portion',
   },
   {
     menu_name: 'Pasta',
     menu_image: menu_7,
+    category: 'Main Course',
+    name: 'Spaghetti Bolognese',
+    time: '25 mins',
+    serving: '2 portions',
   },
   {
     menu_name: 'Noodles',
     menu_image: menu_8,
+    category: 'Main Course',
+    name: 'Chicken Chow Mein',
+    time: '30 mins',
+    serving: '2 portions',
   },
 ]
+
+export const header_food_image = header_food
 
 export const food_list: Food[] = [
   {

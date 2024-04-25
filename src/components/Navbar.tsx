@@ -5,7 +5,7 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState('Find Food')
 
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center transition-all duration-300">
+    <nav className="flex flex-col lg:flex-row justify-between items-center transition-all duration-300">
       <h2 className="text-white text-2xl font-bold mb-4 lg:mb-0 w-[150px] font-Outfit">
         NourishApp
       </h2>
@@ -99,7 +99,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 

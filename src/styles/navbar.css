@@ -7,6 +7,21 @@
   }
 }
 
+/* Define keyframes for red glow */
+@keyframes redGlow {
+  from {
+    box-shadow: 0 0 10px 0px #e2293f;
+  }
+  to {
+    box-shadow: 0 0 20px 5px #e2293f;
+  }
+}
+
+/* Apply red glow effect on hover */
+.order-glow-on-hover:hover {
+  animation: redGlow 1.5s infinite alternate;
+}
+
 /* Apply glow effect on hover */
 .glow-on-hover:hover {
   animation: glow 1.5s infinite alternate;

@@ -1,12 +1,17 @@
-import Navbar from './components/Navbar'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Cart from './pages/Cart'
+import PlaceOrder from './pages/PlaceOrder'
 
 function App() {
   return (
-    <div className="bg-gradient-to-r from-gray-800 to-black bg-opacity-20 backdrop-filter backdrop-blur-lg p-4">
-      <div className="m-auto w-[90%] ">
-        <Navbar />
-      </div>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/place-order" element={<PlaceOrder />} />
+      </Routes>
+    </>
   )
 }
 
