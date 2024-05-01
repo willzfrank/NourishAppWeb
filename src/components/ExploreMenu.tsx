@@ -3,6 +3,7 @@ import { menu_list } from '../assets/assets'
 
 interface MenuItemProps {
   item: Menu
+  onCategoryClick: (category: string) => void
 }
 
 interface Menu {
@@ -14,9 +15,15 @@ interface Menu {
   serving: string
 }
 
-const ExploreMenuItem: React.FC<MenuItemProps> = ({ item }) => {
+const ExploreMenuItem: React.FC<MenuItemProps> = ({
+  item,
+  onCategoryClick,
+}) => {
+  const handleClick = () => {
+    onCategoryClick(item.category)
+  }
   return (
-    <div className="card cursor-pointer">
+    <div className="card cursor-pointer" onClick={handleClick}>
       <div className="content">
         <div className="back">
           <div className="back-content">
@@ -35,7 +42,7 @@ const ExploreMenuItem: React.FC<MenuItemProps> = ({ item }) => {
             <div className="description">
               <div className="title">
                 <p className="title">
-                  <strong>{item.name}</strong>
+                  <strong>{item.menu_name}</strong>
                 </p>
                 <svg
                   fillRule="nonzero"
@@ -48,7 +55,6 @@ const ExploreMenuItem: React.FC<MenuItemProps> = ({ item }) => {
                   <g
                     style={{
                       mixBlendMode: 'normal',
-                      textAnchor: 'none',
                       fontSize: 'none',
                       fontWeight: 'none',
                       fontFamily: 'none',
@@ -80,7 +86,20 @@ const ExploreMenuItem: React.FC<MenuItemProps> = ({ item }) => {
   )
 }
 
-const ExploreMenu = () => {
+interface ExploreMenuProps {
+  setSelectedCategory: (category: string) => void
+  scrollToFoodMenu: () => void
+}
+
+const ExploreMenu: React.FC<ExploreMenuProps> = ({
+  setSelectedCategory,
+  scrollToFoodMenu,
+}) => {
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category)
+    scrollToFoodMenu() // Scroll to the FoodMenu component
+  }
+
   return (
     <div>
       <div className="py-10">
@@ -88,7 +107,11 @@ const ExploreMenu = () => {
       </div>
       <div className="grid grid-cols-4 gap-10">
         {menu_list.map((item, index) => (
-          <ExploreMenuItem key={index} item={item} />
+          <ExploreMenuItem
+            key={index}
+            item={item}
+            onCategoryClick={handleCategoryClick}
+          />
         ))}
       </div>
       <hr className="my-20 border-none mx-0 bg-[#e2e2e2] h-[2px] " />

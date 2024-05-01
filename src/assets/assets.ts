@@ -123,7 +123,7 @@ export const menu_list: Menu[] = [
     menu_image: menu_3,
     category: 'Dessert',
     name: 'Chocolate Cake',
-    time: '45 mins',
+    time: '45 mins -120 mins',
     serving: '8 portions',
   },
   {
@@ -131,7 +131,7 @@ export const menu_list: Menu[] = [
     menu_image: menu_4,
     category: 'Sandwich',
     name: 'Veggie Delight',
-    time: '15 mins',
+    time: '15 mins - 30 mins',
     serving: '1 portion',
   },
   {
@@ -139,7 +139,7 @@ export const menu_list: Menu[] = [
     menu_image: menu_5,
     category: 'Dessert',
     name: 'Red Velvet Cake',
-    time: '60 mins',
+    time: '60 mins - 90 mins',
     serving: '10 portions',
   },
   {
@@ -147,7 +147,7 @@ export const menu_list: Menu[] = [
     menu_image: menu_6,
     category: 'Main Course',
     name: 'Vegetarian Thali',
-    time: '30 mins',
+    time: '30 mins - 60 mins',
     serving: '1 portion',
   },
   {
@@ -155,7 +155,7 @@ export const menu_list: Menu[] = [
     menu_image: menu_7,
     category: 'Main Course',
     name: 'Spaghetti Bolognese',
-    time: '25 mins',
+    time: '25 mins - 75 mins',
     serving: '2 portions',
   },
   {
@@ -163,7 +163,7 @@ export const menu_list: Menu[] = [
     menu_image: menu_8,
     category: 'Main Course',
     name: 'Chicken Chow Mein',
-    time: '30 mins',
+    time: '30 mins 60 mins',
     serving: '2 portions',
   },
 ]

@@ -1,11 +1,18 @@
 import { useState } from 'react'
 import '../styles/navbar.css'
+import { useAppContext } from '../context/AppContext'
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('Find Food')
 
+  const { cart } = useAppContext()
+
+  console.log('Cart', cart)
+
+  const totalItems = Object.keys(cart).length
+
   return (
-    <nav className="flex flex-col lg:flex-row justify-between items-center transition-all duration-300">
+    <nav className="flex flex-col lg:flex-row justify-between items-center transition-all duration-300 sticky z-10 top-0 left-0 py-4 bg-gradient-to-r from-gray-800 to-black">
       <h2 className="text-white text-2xl font-bold mb-4 lg:mb-0 w-[150px] font-Outfit">
         NourishApp
       </h2>
@@ -51,7 +58,6 @@ const Navbar = () => {
           Contact Us
         </li>
       </ul>
-
       <div className="flex items-center gap-[40px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +94,7 @@ const Navbar = () => {
             </div>
             {/* dot */}
             <p className="w-4 flex items-center justify-center text-[10px] h-4 text-white bg-red-500 rounded-full absolute -top-1 right-0 font-medium transition-all duration-300">
-              3
+              {totalItems}
             </p>
           </div>
           <span className="text-white font-medium text-[14px] transition-all duration-300 hover:text-green-500">
