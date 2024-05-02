@@ -3,8 +3,8 @@ import { header_food_image } from '../assets/assets'
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between w-full px-6 py-12">
-      <div className="max-w-xl w-1/2">
+    <div className="flex items-start md:items-center justify-between md:flex-row flex-col w-full px-6 py-0 md:py-12">
+      <div className="max-w-xl w-full md:w-1/2">
         <div className="flex gap-1 flex-col items-start ">
           <div className="flex items-center gap-2 text-gray-50">
             <span className="text-xs">😊</span>
@@ -22,7 +22,7 @@ const Header = () => {
         </div>
 
         <div className="flex space-x-4">
-          <button className="px-4 py-3 text-base font-semibold text-white bg-[#E2293F] order-glow-on-hover rounded-xl">
+          <button className="px-4 py-3 text-base font-semibold text-white bg-[#E2293F] order-glow-on-hover rounded-xl animate__animated animate__flash">
             Order Now
           </button>
           <span className="text-[#F3B404] text-sm flex items-center underline cursor-pointer font-bold">
@@ -30,7 +30,7 @@ const Header = () => {
           </span>
         </div>
       </div>
-      <div className="flex items-center justify-center w-1/2 h-1/2">
+      <div className="flex items-center justify-center w-full md:mt-0 mt-10 md:w-1/2 h-1/2">
         <img
           src={header_food_image}
           alt="header food"

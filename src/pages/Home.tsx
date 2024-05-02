@@ -3,6 +3,7 @@ import ExploreMenu from '../components/ExploreMenu'
 import FoodMenu from '../components/FoodMenu'
 import Header from '../components/Header'
 import MainLayout from '../layouts/MainLayout'
+import AppDownload from '../components/AppDownload'
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
@@ -24,6 +25,7 @@ const Home = () => {
       <div ref={foodMenuRef}>
         <FoodMenu selectedCategory={selectedCategory} />
       </div>
+      <AppDownload />
     </MainLayout>
   )
 }

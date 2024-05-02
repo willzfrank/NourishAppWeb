@@ -101,11 +101,11 @@ const ExploreMenu: React.FC<ExploreMenuProps> = ({
   }
 
   return (
-    <div>
-      <div className="py-10">
+    <div className="p-4">
+      <div className="py-10 ">
         <h2 className="text-white text-3xl">Trending Menus</h2>
       </div>
-      <div className="grid grid-cols-4 gap-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
         {menu_list.map((item, index) => (
           <ExploreMenuItem
             key={index}

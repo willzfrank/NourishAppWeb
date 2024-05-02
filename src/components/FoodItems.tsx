@@ -45,7 +45,7 @@ const FoodItems: React.FC<FoodItemProps> = ({
   const quantityInCart = cart[_id] || 0
 
   return (
-    <div className="w-[24%] text-[#e8e8e8] shadow-sm shadow-slate-50 mt-[30px] m-auto rounded-[15px] animate__animated animate__fadeIn">
+    <div className="w-[47%] md:w-[24%] text-[#e8e8e8] shadow-sm shadow-slate-50 mt-[30px] m-auto rounded-[15px] animate__animated animate__fadeIn">
       <div className="relative ">
         <img src={image} alt="" className="rounded-t-lg w-full rounded-tr-lg" />
         {quantityInCart === 0 ? (

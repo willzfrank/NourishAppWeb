@@ -22,7 +22,7 @@ const FoodMenu: React.FC<FoodMenuProps> = ({ selectedCategory }) => {
   )
 
   return (
-    <div className="mt-[30px]">
+    <div className="mt-[30px] p-4">
       <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-semibold">
         Top dishes near you
       </h2>
