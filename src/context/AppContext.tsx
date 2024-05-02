@@ -6,6 +6,10 @@ type AppContextType = {
   cart: Cart
   addToCart: (item: string) => void
   removeFromCart: (item: string) => void
+  isAuthModalOpen: boolean
+  toggleAuthModal: () => void
+  handleAuthTypeChange: (type: 'Sign in' | 'Sign up') => void
+  authType: string
 }
 type AppProviderProps = {
   children: ReactNode
@@ -26,6 +30,8 @@ export const useAppContext = (): AppContextType => {
 // AppProvider component
 export const AppProvider = ({ children }: AppProviderProps): JSX.Element => {
   const [cart, setCart] = useState<Cart>({})
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState<boolean>(false)
+  const [authType, setAuthType] = useState<'Sign in' | 'Sign up'>('Sign in')
 
   // Function to add item to cart
   const addToCart = (item: string): void => {
@@ -49,12 +55,25 @@ export const AppProvider = ({ children }: AppProviderProps): JSX.Element => {
     })
   }
 
+  const toggleAuthModal = (): void => {
+    setIsAuthModalOpen((prevState) => !prevState)
+  }
+
+  // Function to handle authentication type change
+  const handleAuthTypeChange = (type: 'Sign in' | 'Sign up') => {
+    setAuthType(type)
+  }
+
   return (
     <AppContext.Provider
       value={{
         cart,
         addToCart,
         removeFromCart,
+        isAuthModalOpen,
+        toggleAuthModal,
+        handleAuthTypeChange,
+        authType,
       }}
     >
       {children}

@@ -2,9 +2,10 @@ import { useState } from 'react'
 import '../styles/navbar.css'
 import { useAppContext } from '../context/AppContext'
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [activeLink, setActiveLink] = useState('Find Food')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { toggleAuthModal, handleAuthTypeChange } = useAppContext()
 
   const { cart } = useAppContext()
 
@@ -101,10 +102,22 @@ const Navbar = () => {
                 {totalItems}
               </p>
             </div>
-            <span className="text-white font-medium text-[14px] transition-all duration-300 hover:text-green-500">
+            <span
+              className="text-white font-medium text-[14px] transition-all duration-300 hover:text-green-500 cursor-pointer"
+              onClick={() => {
+                toggleAuthModal()
+                handleAuthTypeChange('Sign in')
+              }}
+            >
               Sign in
             </span>
-            <button className="bg-green-500 glow-on-hover text-white font-medium py-2 px-4 rounded-md text-[14px] transition-all duration-300 hover:bg-green-600">
+            <button
+              className="bg-green-500 glow-on-hover text-white font-medium py-2 px-4 rounded-md text-[14px] transition-all duration-300 hover:bg-green-600"
+              onClick={() => {
+                toggleAuthModal()
+                handleAuthTypeChange('Sign up')
+              }}
+            >
               Sign Up
             </button>
           </div>
@@ -189,10 +202,22 @@ const Navbar = () => {
               >
                 Contact Us
               </li>
-              <button className="bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md transition-colors duration-300 hover:bg-red-500 hover:text-white">
+              <button
+                className="bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md transition-colors duration-300 hover:bg-red-500 hover:text-white cursor-pointer"
+                onClick={() => {
+                  toggleAuthModal()
+                  handleAuthTypeChange('Sign in')
+                }}
+              >
                 Sign In
               </button>
-              <button className="bg-red-500 text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 hover:bg-red-600">
+              <button
+                className="bg-red-500 text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 hover:bg-red-600"
+                onClick={() => {
+                  toggleAuthModal()
+                  handleAuthTypeChange('Sign up')
+                }}
+              >
                 Sign Up
               </button>
             </ul>
