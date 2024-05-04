@@ -1,5 +1,6 @@
 import React from 'react'
-import { food_list } from '../assets/assets'
+// import { food_list } from '../assets/assets'
+import { useAppContext } from '../context/AppContext'
 import FoodItems from './FoodItems'
 
 interface FoodItem {
@@ -16,7 +17,8 @@ interface FoodMenuProps {
 }
 
 const FoodMenu: React.FC<FoodMenuProps> = ({ selectedCategory }) => {
-  const filteredFoodItems = food_list.filter(
+  const { foodList } = useAppContext()
+  const filteredFoodItems = foodList.filter(
     (item: FoodItem) =>
       selectedCategory === 'all' || selectedCategory === item.category
   )

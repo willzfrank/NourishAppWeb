@@ -1,7 +1,18 @@
 import { createContext, useState, useContext, ReactNode } from 'react'
+import { food_list } from '../assets/assets'
 
 // Define types for the context value and the props for the provider component
 type Cart = { [key: string]: number }
+
+interface FoodItem {
+  price: number
+  image: string
+  _id: string
+  name: string
+  description: string
+  category: string
+}
+
 type AppContextType = {
   cart: Cart
   addToCart: (item: string) => void
@@ -10,6 +21,7 @@ type AppContextType = {
   toggleAuthModal: () => void
   handleAuthTypeChange: (type: 'Sign in' | 'Sign up') => void
   authType: string
+  foodList: FoodItem[]
 }
 type AppProviderProps = {
   children: ReactNode
@@ -64,6 +76,9 @@ export const AppProvider = ({ children }: AppProviderProps): JSX.Element => {
     setAuthType(type)
   }
 
+  // Add food_list to context
+  const [foodList] = useState<FoodItem[]>(food_list)
+
   return (
     <AppContext.Provider
       value={{
@@ -74,6 +89,7 @@ export const AppProvider = ({ children }: AppProviderProps): JSX.Element => {
         toggleAuthModal,
         handleAuthTypeChange,
         authType,
+        foodList,
       }}
     >
       {children}
